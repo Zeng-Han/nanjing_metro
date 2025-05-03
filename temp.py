@@ -1,6 +1,3 @@
-from matplotlib import pyplot as plt
-import matplotlib
-a=sorted([f.name for f in matplotlib.font_manager.fontManager.ttflist])
+import networkx as nx
 
-for i in a:
-    print(i)
+print(nx.__version__)

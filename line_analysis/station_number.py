@@ -10,8 +10,13 @@ for line in lines:
     numbers.append(station_num)
 
 fig = plt.figure(figsize=(8, 6))
-plt.bar(lines, numbers, color='white', edgecolor='black')
+bars = plt.bar(lines, numbers, color='white', edgecolor='black')
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width() / 2., height + 0.1,
+             f'{height}', fontsize=8, ha='center', va='bottom')
+
 plt.title('Number of Stations on Different Lines')
 plt.ylabel('Number of Stations')
 plt.xlabel('Line')
-plt.savefig('../images/station_number.png', dpi=200)
+plt.savefig('../images/station_number.png', dpi=400)
